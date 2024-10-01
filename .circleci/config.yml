@@ -1,0 +1,30 @@
+version: 2.1
+
+jobs:
+  build:
+    docker:
+      - image: circleci/node:20
+    steps:
+      - checkout
+      - run:
+          name: Install Dependencies
+          command: npm install
+      - run:
+          name: Install React Native CLI
+          command: npm install -g react-native-cli
+      - run:
+          name: Build the Android App
+          command: |
+            cd android
+            ./gradlew assembleRelease  # Adjust if necessary
+      - run:
+          name: Build the iOS App
+          command: |
+            cd ios
+            xcodebuild -workspace TestAppCICD.xcworkspace -scheme TestAppCICD -sdk iphoneos -configuration Release archive -archivePath $PWD/build/TestAppCICD.xcarchive
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
