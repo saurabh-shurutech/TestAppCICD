@@ -19,6 +19,11 @@ jobs:
             echo 'export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH' >> $BASH_ENV
             source $BASH_ENV
       - run:
+          name: Install SDK Components and Accept Licenses
+          command: |
+            yes | sdkmanager --licenses
+            sdkmanager "platforms;android-34" "build-tools;34.0.0"  # Adjust versions as needed
+      - run:
           name: Set JAVA_HOME
           command: |
             echo 'export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64' >> $BASH_ENV
