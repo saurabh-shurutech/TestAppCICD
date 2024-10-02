@@ -20,6 +20,7 @@ jobs:
             echo 'export ANDROID_HOME=$HOME/Android/Sdk' >> $BASH_ENV
             echo 'export PATH="$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$PATH"'
             source $BASH_ENV
+            ls $ANDROID_HOME
             sdkmanager --sdk_root=${ANDROID_HOME} "tools"
             sdkmanager --update
             sdkmanager --list
