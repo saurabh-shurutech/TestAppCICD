@@ -18,8 +18,7 @@ jobs:
             echo 'export ANDROID_HOME=/usr/lib/android-sdk' >> $BASH_ENV
             echo 'export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH' >> $BASH_ENV
             source $BASH_ENV
-            echo $ANDROID_HOME
-            echo $PATH
+            ls $ANDROID_HOME
       - run:
           name: Set JAVA_HOME
           command: |
