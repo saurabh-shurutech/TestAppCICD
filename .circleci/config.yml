@@ -14,16 +14,16 @@ jobs:
       - run:
           name: Install Android SDK
           command: |
-            sudo apt update
-            sudo apt install snapd
-            sudo snap install androidsdk
-            which androidsdk
-            # sudo apt-get install -y android-sdk
-            # echo 'export ANDROID_HOME=/usr/lib/android-sdk' >> $BASH_ENV
-            # echo 'export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH' >> $BASH_ENV
-            # source $BASH_ENV
-            # ls $ANDROID_HOME/tools
-            # $ANDROID_HOME/tools/bin/sdkmanager --licenses
+            sudo apt-get install -y android-sdk
+            echo 'export ANDROID_HOME=/usr/lib/android-sdk' >> $BASH_ENV
+            echo 'export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH' >> $BASH_ENV
+            source $BASH_ENV
+            wget https://dl.google.com/android/repository/commandlinetools-linux-6609375_latest.zip
+            unzip commandlinetools-linux-6609375_latest.zip -d $ANDROID_HOME
+            mv $ANDROID_HOME/cmdline-tools $ANDROID_HOME/cmdline-tools/latest
+            ls $ANDROID_HOME
+            ls $ANDROID_HOME/cmdline-tools/latest
+            sdkmanager --licences
       - run:
           name: Set JAVA_HOME
           command: |
