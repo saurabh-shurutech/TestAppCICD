@@ -29,8 +29,8 @@ jobs:
           command: |
             echo "sdk.dir=/usr/lib/android-sdk" > android/local.properties
       - run:
-        name: Accept licences
-        command: sdkmanager.bat --licenses
+          name: Accept licences
+          command: sdkmanager.bat --licenses
       - run:
           name: Install Dependencies
           command: npm install
