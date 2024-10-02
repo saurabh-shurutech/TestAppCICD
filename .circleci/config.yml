@@ -19,7 +19,7 @@ jobs:
             echo 'export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH' >> $BASH_ENV
             source $BASH_ENV
             wget https://dl.google.com/android/repository/commandlinetools-linux-6609375_latest.zip
-            unzip commandlinetools-linux-6609375_latest.zip -d $ANDROID_HOME
+            sudo unzip commandlinetools-linux-6609375_latest.zip -d $ANDROID_HOME
             sudo mv $ANDROID_HOME/cmdline-tools $ANDROID_HOME/cmdline-tools/latest
             sudo chown -R $(whoami):$(whoami) $ANDROID_HOME/cmdline-tools
             ls $ANDROID_HOME
