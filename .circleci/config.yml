@@ -19,8 +19,7 @@ jobs:
             echo 'export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH' >> $BASH_ENV
             source $BASH_ENV
             ls $ANDROID_HOME/tools
-            cd $ANDROID_HOME/tools/bin ./sdkmanager --licenses
-            cd
+            $ANDROID_HOME/tools/bin/sdkmanager --licenses
       - run:
           name: Set JAVA_HOME
           command: |
