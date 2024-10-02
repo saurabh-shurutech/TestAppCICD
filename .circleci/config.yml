@@ -19,6 +19,8 @@ jobs:
             echo 'export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH' >> $BASH_ENV
             source $BASH_ENV
             find /usr/lib/android-sdk/ -name sdkmanager
+            find /usr/lib/android-sdk/* -name sdkmanager
+            locate sdkmanager
       - run:
           name: Set JAVA_HOME
           command: |
