@@ -20,7 +20,8 @@ jobs:
             source $BASH_ENV
             wget https://dl.google.com/android/repository/commandlinetools-linux-6609375_latest.zip
             sudo unzip -o commandlinetools-linux-6609375_latest.zip -d $ANDROID_HOME
-            $ANDROID_HOME/tools/bin/sdkmanager --licences
+            cd $ANDROID_HOME/tools/bin ./sdkmanager --licences
+            cd
       - run:
           name: Set JAVA_HOME
           command: |
