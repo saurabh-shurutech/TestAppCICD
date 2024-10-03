@@ -19,7 +19,7 @@ jobs:
             echo 'export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH' >> $BASH_ENV
             source $BASH_ENV
             wget https://dl.google.com/android/repository/commandlinetools-linux-6609375_latest.zip
-            sudo unzip commandlinetools-linux-6609375_latest.zip -d $ANDROID_HOME -x "tools/bin/apkanalyzer" "tools/bin/lint" "tools/bin/avdmanager"
+            sudo unzip commandlinetools-linux-6609375_latest.zip -d $ANDROID_HOME -x "tools/bin/apkanalyzer" "tools/bin/lint" "tools/bin/avdmanager" "tools/bin/screenshot2"
             sudo mv $ANDROID_HOME/cmdline-tools $ANDROID_HOME/cmdline-tools/latest
             sudo chown -R $(whoami):$(whoami) $ANDROID_HOME/cmdline-tools
             ls $ANDROID_HOME
