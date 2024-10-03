@@ -21,6 +21,7 @@ jobs:
             wget https://dl.google.com/android/repository/commandlinetools-linux-6609375_latest.zip
             sudo unzip -o commandlinetools-linux-6609375_latest.zip -d $ANDROID_HOME
             echo 'export ANDROID_HOME_SDK=/usr/lib/android-sdk/tools/bin' >> $BASH_ENV
+            source $BASH_ENV
             sdkmanager --licences
       - run:
           name: Set JAVA_HOME
